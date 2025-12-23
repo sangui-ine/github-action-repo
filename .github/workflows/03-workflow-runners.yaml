@@ -8,3 +8,10 @@ jobs:
               run: |
                 echo "This job is running on $(uname -a)"
                 echo "Ruunner OS: $RUNNER_OS"
+    windows-echo:
+        runs-on: windows-latest
+        steps:
+            - name: SHOW os
+              run: |
+                echo "This job is running on windows runner "
+                echo "Ruunner OS: $RUNNER_OS"           
