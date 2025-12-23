@@ -1,0 +1,21 @@
+name: 04-Using-Action
+
+on: push
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+            - name: Printing folder 
+              run: ls -la  
+
+            # - name: Use a third-party action
+            #   uses: actions/setup-node@v3
+            #   with:
+            #       node-version: '14'
+
+            # - name: Verify Node.js installation
+            #   run: |
+            #       node -v
+            #       npm -v
