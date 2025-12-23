@@ -4,6 +4,9 @@ on: push
 jobs:
     build:
         runs-on: ubuntu-latest
+        defaults:
+            run:
+                working-directory: ./04-using-actions/react-app
         steps:
             - name: Checkout repository
               uses: actions/checkout@v4
@@ -13,7 +16,8 @@ jobs:
                   node-version: 'v25.2.1'
             - name: install dependencies
               run: npm ci
-              working-directory: 04-using-actions/reacct-app   
+            - name: Run unit Tests
+              run: npm run test
 
 
 
