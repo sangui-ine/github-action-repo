@@ -8,9 +8,15 @@ on:
         debug:
             type: boolean
             default: false
+env:
+    MY_WORKFLOW_VAR: 'workflow'
+    MY_OVERWRITTEN_VAR: 'workflow'            
 jobs:
     echo-data:
         runs-on: ubuntu-latest
+        env:
+            MY_JOB_VAR: 'job'
+            MY_OVERWRITTEN_VAR: 'job'
         steps:
             - name: Show GitHub Context Data
               run: |
@@ -25,4 +31,9 @@ jobs:
             - name: Retrieve variable
               run: |
                 echo "Variable value: ${{ vars.MY_VARIABLE }}"
+            - name: Show Environment Variables
+              run: |
+                echo "MY_WORKFLOW_VAR: $MY_WORKFLOW_VAR"
+                echo "MY_JOB_VAR: $MY_JOB_VAR"
+                echo "MY_OVERWRITTEN_VAR: $MY_OVERWRITTEN_VAR"    
 # ...existing code...
