@@ -1,0 +1,17 @@
+name: 01-Building-Blocks
+on: push
+jobs:
+    echo-hello:
+        runs-on: unbuntu-latest
+        steps:
+            - name: Sayy Hello
+              run: echo "Hello, World!"
+    echo-goodbye:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Say Goodbye
+              run: |
+               exit 1
+               echo "I will fails"
+            - name: Say Goodbye
+              run: echo "Goodbye, World!"   
